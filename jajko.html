@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egg</title>
+</head>
+<body>
+    <aside class="left_menu">
+        <h3>Скины</h3>
+        
+        <select name="jajko" id="skin" onchange="Skin()">
+            <option value="Foto/pngegg.png">Jajko White</option>
+            <option value="Foto/egglvl2.png">Jajko Orange</option>
+        </select><br>
+        
+    </aside>
+    <main id="eggg">
+    <h3>Яйцо</h3>
+    <p id="click2">0</p>
+    <p id="foto"><img src="Foto/pngegg.png" onclick="Click()"></p> <br>
+    <button onclick="reset()" id="res">RESET</button>
+    </main>
+        <br>
+    
+    <script>
+        function Skin(){
+            let skin = document.getElementById('skin').value 
+                document.getElementById("foto").innerHTML = '<img src="'+skin+'" onclick="Click()">';
+        }
+    </script>
+    <script>  
+        let i = 0;        
+        function Click(){
+            i = i+1;
+            document.getElementById("click2").innerHTML = i;
+            if ( i>=10 && i < 49 ){
+                document.getElementById("click2").style.color = "red";
+            } else if ( i > 49 && i < 99 ){
+                document.getElementById("click2").style.color = "blue";
+            } else if ( i > 99 && i < 499 ){
+                document.getElementById("click2").style.color = "green";
+            } else if ( i > 499 && i < 999 ){
+                document.getElementById("click2").style.color = "purple";
+            } else if ( i > 999 && i < 4999 ){
+                document.getElementById("click2").style.color = "cyan";
+            } else if ( i > 4999 && i < 9999){
+                document.getElementById("click2").style.color = "OrangeRed";
+            } else if ( i > 9999 ){
+                document.getElementById("click2").style.color = "Black";
+            }
+        }
+        function reset(){
+            document.getElementById("click2").innerHTML = 0;
+            document.getElementById("click2").style.color = "black";
+            i=0;
+
+        }
+    </script>
+
+
+
+
+
+    <style>
+        .left_menu{
+            float: none;
+            background-color: #fff;
+            height: 100px;
+            width: 200px;
+            border-radius: 10px  ;
+            background-color: lightgrey;
+            border: 2px solid black;
+            display: block;
+            
+        }
+        select{
+            height: 30px;
+            border-radius: 7px;
+            border: 2px solid black;
+            font-family: Verdana, Tahoma, sans-serif;
+        }
+        button{
+            font-weight: bolder;
+            font-family: Verdana, Tahoma, sans-serif;
+            margin: 10px;
+            border-radius: 7px;
+            padding: 10px 20px;
+        }
+        body{
+            justify-content: center;
+            display: flex;
+            text-align: center;
+            background-color: rgb(255, 253, 208);
+            font-family: Verdana, Tahoma, sans-serif;
+        }
+        #res{
+            background-color: red;
+            color: white;
+        }
+        p img{
+            height: 150px;
+            width: auto ;
+        }
+        main{
+            border-radius: 10px  ;
+            background-color: lightgrey;
+            border: 2px solid black;
+            width: 325px;
+            height: 370px;
+            text-align: center;
+            margin-left: 20px ;
+            display: block;
+            float: none;
+        }
+        #skiny{
+            float: none;
+            text-align: center;
+            background-color: lightgrey;
+            margin: auto;
+            width: 250px;
+            height: 180px;
+            border: 2px solid black;
+            border-radius: 7px;
+            white-space: nowrap;
+        }
+    </style>
+</body>
+</html>
