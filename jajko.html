@@ -6,7 +6,7 @@
     <title>Egg</title>
 </head>
 <body>
-    <aside class="left_menu">
+    <aside class="left-menu">
         <h3>Скины</h3>
         
         <select name="jajko" id="skin" onchange="Skin()">
@@ -19,9 +19,14 @@
     <h3>Яйцо</h3>
     <p id="click2">0</p>
     <p id="foto"><img src="Foto/pngegg.png" onclick="Click()"></p> <br>
-    <button onclick="reset()" id="res">RESET</button>
+    <button onclick="reset()">RESET</button>
     </main>
-        <br>
+    <aside class="right-menu">
+        <h3>Магазин</h3>
+        <a><img src="Foto/greenegg.png"></a>
+    </aside>
+
+         
     
     <script>
         function Skin(){
@@ -59,15 +64,26 @@
     </script>
 
 
-
+    <script>
+    
+    </script>
 
 
     <style>
-        .left_menu{
+        a img{
+            width: 150px;
+            height: auto;
+        }
+        p{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        aside{
+            justify-content: center;
             float: none;
             background-color: #fff;
-            height: 100px;
-            width: 200px;
+            height: 500px;
+            width: 400px;
             border-radius: 10px  ;
             background-color: lightgrey;
             border: 2px solid black;
@@ -94,7 +110,7 @@
             background-color: rgb(255, 253, 208);
             font-family: Verdana, Tahoma, sans-serif;
         }
-        #res{
+        button{
             background-color: red;
             color: white;
         }
@@ -109,7 +125,7 @@
             width: 325px;
             height: 370px;
             text-align: center;
-            margin-left: 20px ;
+            margin: 0px 20px;
             display: block;
             float: none;
         }
