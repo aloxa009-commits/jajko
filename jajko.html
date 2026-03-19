@@ -23,9 +23,32 @@
     </main>
     <aside class="right-menu">
         <h3>Магазин</h3>
-        <a><img src="Foto/greenegg.png"></a>
+        <a id="shop_img" class="imgegg"><img src="Foto/greenegg.png"></a><br><button class="left-arrow" onclick="Left()"><</button><button onclick="Right()" class="right-arrow">></button>
+        <p>Цена: <a>1100</a></p>
     </aside>
+    <script>
+    let photo = 1;
+    const shopPhotos = [
+        "Foto/greenegg.png",
+        "Foto/egglvl2.png"
+    ];
 
+    function renderShop() {
+        document.getElementById("shop_img").innerHTML = `<img src="${shopPhotos[photo - 1]}">`;
+    }
+
+    function Left() {
+        photo = photo === 1 ? shopPhotos.length : photo - 1;
+        renderShop();
+    }
+
+    function Right() {
+        photo = photo === shopPhotos.length ? 1 : photo + 1;
+        renderShop();
+    }
+
+    renderShop();
+</script>
          
     
     <script>
@@ -63,14 +86,21 @@
         }
     </script>
 
-
-    <script>
-    
-    </script>
-
-
     <style>
+        .imgegg img{
+            height: 200px;
+            width: auto;
+        }
+        .left-arrow{
+            margin-right: 100px;
+            cursor: pointer;        
+        }
+        .right-arrow{
+            cursor: pointer;
+        }
+        
         a img{
+            
             width: 150px;
             height: auto;
         }
